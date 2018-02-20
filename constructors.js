@@ -6,6 +6,7 @@
   You can refresh the page at any time to re-run all the tests.
 */
 
+
 ////////// PROBLEM 1 //////////
 
 /*
@@ -13,9 +14,12 @@
   The values for the make and model will come from two parameters, make and model (in that order).
 */
 
-// Code here
+function CarFactory(make, model){
+  this.make = make;
+  this.model = model;
+};
 
-
+let coolCar = new CarFactory('Volvo', '240');
 
 ////////// PROBLEM 2 //////////
 
@@ -25,6 +29,7 @@ function Employee(name, email, hireDate) {
   this.email = email;
   this.hireDate = hireDate;
 }
+
 // Do not edit the code above.
 
 /* 
@@ -32,7 +37,7 @@ function Employee(name, email, hireDate) {
   Assign the result of the invocation to a variable called bob.
 */
 
-// Code here
+let bob = new Employee('Bob', 'bob@gmail.com', '01-02-98');
 
 
 
@@ -43,6 +48,7 @@ var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
 prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
 mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
+
 // Do not edit the code above.
 
 /*
@@ -53,6 +59,14 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
   You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
 */
 
-// Code here
+function Car(make, model, year){
+  let move = 0;
+  this.make = make;
+  this.model = model;
+  this.year = year;
 
+  this.moveCar = function (){
+    return move += 10;
+  }
+}
 
